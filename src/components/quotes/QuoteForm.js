@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import Loader from "../UI/Loader";
 
 const QuoteForm = (props) => {
   const authorRef = useRef();
@@ -14,9 +15,9 @@ const QuoteForm = (props) => {
       author: enteredAuthor,
       text: enteredText,
     };
-    console.table(obj);
 
-    // send to FB
+    // send to Parent
+    props.addQuote(obj);
   };
 
   return (
@@ -46,8 +47,12 @@ const QuoteForm = (props) => {
           className='w-full h-20 py-2 px-3 rounded border bg-green-50 border-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100'></textarea>
       </div>
 
-      <div className='text-xl'>
-        <button className='float-right my-4 px-6 py-2 rounded-lg bg-green-600 text-white duration-300 hover:bg-green-400'>
+      <div className='text-xl float-right flex justify-center items-center'>
+        <div className='transform scale-75 mr-4'>
+          {props.isLoading && <Loader />}
+        </div>
+
+        <button className='my-4 px-6 py-2 rounded-lg bg-green-600 text-white duration-300 hover:bg-green-400'>
           Submit
         </button>
       </div>

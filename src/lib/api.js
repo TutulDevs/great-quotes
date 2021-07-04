@@ -27,3 +27,9 @@ export const getSingleQuote = async (quoteId) => {
 
   return quote;
 };
+
+export const addQuote = async (quoteData) => {
+  await axios.post("/quotes.json", quoteData);
+
+  return null;
+};
