@@ -31,7 +31,7 @@ const QuoteForm = (props) => {
           name='author'
           id='author'
           required
-          className='w-full py-2 px-3 rounded border border-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100'
+          className='w-full py-2 px-3 rounded border bg-green-50 border-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100'
         />
       </div>
       <div className='mb-3 text-xl'>
@@ -43,7 +43,7 @@ const QuoteForm = (props) => {
           name='text'
           id='text'
           required
-          className='w-full h-20 py-2 px-3 rounded border border-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100'></textarea>
+          className='w-full h-20 py-2 px-3 rounded border bg-green-50 border-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100'></textarea>
       </div>
 
       <div className='text-xl'>
