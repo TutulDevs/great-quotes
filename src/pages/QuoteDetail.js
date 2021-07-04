@@ -1,21 +1,39 @@
+import { useEffect } from "react";
 import { useParams, Link, Route, useRouteMatch } from "react-router-dom";
 import SingleQuote from "../components/quotes/SingleQuote";
+import useHttp from "../hooks/useHttp";
+import { getSingleQuote } from "../lib/api";
 import Comments from "./Comments";
-
-const DUMMY = [
-  { id: "q1", author: "Max", text: "This is a quote." },
-  { id: "q2", author: "Tutul", text: "This is another quote." },
-];
+import Loader from "../components/UI/Loader";
+import NoQuoteFound from "../components/quotes/NoQuoteFound";
 
 const QuoteDetail = () => {
+  const {
+    sendRequest,
+    data: loadedData,
+    status,
+    error,
+  } = useHttp(getSingleQuote, true);
+
   const param = useParams();
+  const { quoteId } = param;
   const matchingRoute = useRouteMatch();
 
-  const selectedQuote = DUMMY.find((el) => el.id === param.quoteId);
+  useEffect(() => {
+    sendRequest(quoteId);
+  }, [sendRequest, quoteId]);
+
+  let content;
+  if (status === "pending") content = <Loader />;
+  if (error)
+    content = <p className='text-center text-xl text-red-400'>{error}</p>;
+  if (status === "completed" && !loadedData.text) content = <NoQuoteFound />;
+  if (status === "completed")
+    content = <SingleQuote author={loadedData.author} text={loadedData.text} />;
 
   return (
     <>
-      <SingleQuote quote={selectedQuote} />
+      {content}
 
       <Route path={matchingRoute.path} exact>
         <div className='grid place-items-center py-2'>
@@ -33,5 +51,3 @@ const QuoteDetail = () => {
 };
 
 export default QuoteDetail;
-
-//{`${location.pathname}/comments`}

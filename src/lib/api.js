@@ -15,3 +15,15 @@ export const getAllQuotes = async () => {
 
   return transformedArr;
 };
+
+export const getSingleQuote = async (quoteId) => {
+  const res = await axios.get(`/quotes/${quoteId}.json`);
+  const data = res.data;
+
+  const quote = {
+    id: quoteId,
+    ...data,
+  };
+
+  return quote;
+};
