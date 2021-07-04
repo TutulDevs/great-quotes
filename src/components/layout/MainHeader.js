@@ -4,7 +4,7 @@ const MainHeader = () => {
   return (
     <header className='bg-green-600'>
       <div className='w-11/12 mx-auto py-4 flex justify-between items-center'>
-        <div className='logo font-nova'>
+        <div className='logo font-nova flex-1'>
           <h1 className='text-3xl font-bold text-white'>Great Quotes</h1>
         </div>
 
@@ -13,7 +13,7 @@ const MainHeader = () => {
             <li>
               <NavLink
                 to='/quotes'
-                className='ml-1 px-4 py-1 text-xl font-light opacity-50 text-white hover:opacity-100'
+                className='ml-1 px-4 py-1 text-md sm:text-xl font-light opacity-50 text-white hover:opacity-100'
                 activeClassName='font-medium opacity-100'>
                 Quotes
               </NavLink>
@@ -21,7 +21,7 @@ const MainHeader = () => {
             <li>
               <NavLink
                 to='/new-quote'
-                className='ml-1 px-4 py-1 text-xl font-light opacity-50 text-white hover:opacity-100'
+                className='ml-1 px-4 py-1 text-md sm:text-xl font-light opacity-50 text-white hover:opacity-100'
                 activeClassName='font-medium opacity-100'>
                 Add Quote
               </NavLink>
