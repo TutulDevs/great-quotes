@@ -49,3 +49,12 @@ export const getAllComments = async (quoteId) => {
 
   return transformedArr;
 };
+
+export const addComment = async (commentData) => {
+  await axios.post(
+    `/comments/${commentData.quoteId}.json`,
+    commentData.commentText
+  );
+
+  return null;
+};

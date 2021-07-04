@@ -3,7 +3,7 @@ import CommentForm from "../components/comments/CommentForm";
 import { useParams } from "react-router-dom";
 import useHttp from "../hooks/useHttp";
 import { getAllComments } from "../lib/api";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import Loader from "../components/UI/Loader";
 
 const Comments = () => {
@@ -17,6 +17,10 @@ const Comments = () => {
   const { quoteId } = param;
 
   useEffect(() => {
+    sendRequest(quoteId);
+  }, [sendRequest, quoteId]);
+
+  const addCommentHandler = useCallback(() => {
     sendRequest(quoteId);
   }, [sendRequest, quoteId]);
 
@@ -36,7 +40,7 @@ const Comments = () => {
 
   return (
     <div className='my-2'>
-      <CommentForm />
+      <CommentForm onAddComment={addCommentHandler} />
 
       {content}
     </div>
