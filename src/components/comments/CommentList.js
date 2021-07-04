@@ -1,7 +1,7 @@
 const CommentList = (props) => {
   const comments = props.comments.map((el) => (
     <li key={el.id} className='py-1'>
-      {el.comment}
+      {el.text}
     </li>
   ));
 

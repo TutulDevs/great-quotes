@@ -1,17 +1,44 @@
 import CommentList from "../components/comments/CommentList";
 import CommentForm from "../components/comments/CommentForm";
-
-const DUMMY = [
-  { id: "c1", comment: "This is a comment" },
-  { id: "c2", comment: "This is another comment" },
-];
+import { useParams } from "react-router-dom";
+import useHttp from "../hooks/useHttp";
+import { getAllComments } from "../lib/api";
+import { useEffect } from "react";
+import Loader from "../components/UI/Loader";
 
 const Comments = () => {
+  const {
+    sendRequest,
+    status,
+    data: loadedComments,
+  } = useHttp(getAllComments, true);
+
+  const param = useParams();
+  const { quoteId } = param;
+
+  useEffect(() => {
+    sendRequest(quoteId);
+  }, [sendRequest, quoteId]);
+
+  let content;
+  if (status === "pending") content = <Loader />;
+  if (status === "completed" && loadedComments && loadedComments.length > 0)
+    content = <CommentList comments={loadedComments} />;
+  if (
+    status === "completed" &&
+    (!loadedComments || loadedComments.length === 0)
+  )
+    content = (
+      <p className='text-center text-xl'>
+        No comment was added on this quote yet.
+      </p>
+    );
+
   return (
     <div className='my-2'>
       <CommentForm />
 
-      <CommentList comments={DUMMY} />
+      {content}
     </div>
   );
 };
