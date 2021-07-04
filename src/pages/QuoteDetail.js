@@ -40,7 +40,7 @@ const QuoteDetail = () => {
           <Link
             to={`${matchingRoute.url}/comments`}
             className='px-4 py-2 rounded-lg bg-green-600 text-white duration-300 hover:bg-green-400'>
-            Comments
+            Add a Comment
           </Link>
         </div>
       </Route>

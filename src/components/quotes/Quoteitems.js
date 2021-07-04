@@ -6,9 +6,7 @@ const QuoteItems = (props) => {
   ));
 
   return (
-    <div className='flex flex-wrap flex-col lg:flex-row justify-between '>
-      {content}
-    </div>
+    <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-4'>{content}</div>
   );
 };
 

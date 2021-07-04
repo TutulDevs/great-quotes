@@ -1,11 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const MainHeader = () => {
   return (
     <header className='bg-green-600'>
       <div className='w-11/12 mx-auto py-4 flex justify-between items-center'>
         <div className='logo font-nova flex-1'>
-          <h1 className='text-3xl font-bold text-white'>Great Quotes</h1>
+          <h1 className='text-3xl font-bold text-white'>
+            <Link to='/'>Great Quotes</Link>
+          </h1>
         </div>
 
         <nav>
