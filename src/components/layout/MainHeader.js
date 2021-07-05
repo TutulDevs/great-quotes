@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import ToggleDarkMode from "../UI/ToggleDarkMode";
 
 const MainHeader = () => {
   return (
@@ -11,11 +12,11 @@ const MainHeader = () => {
         </div>
 
         <nav>
-          <ul className='flex'>
+          <ul className='flex items-center'>
             <li>
               <NavLink
                 to='/quotes'
-                className='ml-1 px-4 py-1 text-md sm:text-xl font-light opacity-50 text-white hover:opacity-100'
+                className='px-2 sm:px-4 py-1 text-lg sm:text-xl font-light opacity-50 text-white hover:opacity-100'
                 activeClassName='font-medium opacity-100'>
                 Quotes
               </NavLink>
@@ -23,10 +24,13 @@ const MainHeader = () => {
             <li>
               <NavLink
                 to='/new-quote'
-                className='ml-1 px-4 py-1 text-md sm:text-xl font-light opacity-50 text-white hover:opacity-100'
+                className='px-2 sm:px-4 py-1 text-lg sm:text-xl font-light opacity-50 text-white hover:opacity-100'
                 activeClassName='font-medium opacity-100'>
                 Add Quote
               </NavLink>
+            </li>
+            <li>
+              <ToggleDarkMode />
             </li>
           </ul>
         </nav>

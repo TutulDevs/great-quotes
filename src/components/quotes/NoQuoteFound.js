@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const NoQuoteFound = () => {
   return (
     <div className='text-xl min-h-50 flex flex-col justify-around items-center'>
-      <h1 className='font-bold font-nova text-4xl'>No Quotes Found.</h1>
+      <h1 className='font-bold font-nova text-4xl dark:text-gray-200'>
+        No Quotes Found.
+      </h1>
 
       <Link
         to='/new-quote'

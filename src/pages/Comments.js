@@ -33,8 +33,8 @@ const Comments = () => {
     (!loadedComments || loadedComments.length === 0)
   )
     content = (
-      <p className='text-center text-xl'>
-        No comment was added on this quote yet.
+      <p className='text-center text-xl dark:text-gray-200'>
+        No comments were added on this quote yet.
       </p>
     );
 

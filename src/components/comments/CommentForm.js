@@ -46,7 +46,7 @@ const CommentForm = (props) => {
       <textarea
         ref={commentRef}
         placeholder='Write your comment'
-        className='w-full mb-4 py-2 px-4 rounded-lg bg-green-50 border border-green-300 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100'></textarea>
+        className='w-full mb-4 py-2 px-4 rounded-lg bg-green-50 border border-green-300 focus:outline-none focus:ring focus:ring-green-300 focus:bg-green-100 dark:bg-gray-600 dark:border-gray-600 dark:text-gray-200'></textarea>
 
       <div className='flex items-center'>
         <div className='transform scale-50 mr-2'>

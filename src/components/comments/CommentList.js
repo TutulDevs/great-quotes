@@ -23,11 +23,11 @@ const CommentList = (props) => {
 
   return (
     <>
-      <h3 className='mt-4 mb-2 text-xl font-bold tracking-wider flex flex-col justify-center items-center content-around justify-center flex-wrap'>
+      <h3 className='mt-4 mb-2 text-xl font-bold tracking-wider flex flex-col justify-center items-center content-around justify-center flex-wrap dark:text-gray-200'>
         Comments {icon}
       </h3>
 
-      <ul className='flex flex-col justify-center items-center divide-y divide-green-300 text-lg'>
+      <ul className='flex flex-col justify-center items-center divide-y divide-green-300 dark:divide-green-900 text-lg dark:text-gray-300'>
         {comments}
       </ul>
     </>
