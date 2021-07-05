@@ -1,8 +1,22 @@
-# Getting Started with Create React App
+# Great Quotes
+
+**Great Quotes** is a Reactjs application to create quotes and interacting with them.
+
+👉 Check the [live site]('https://r-gq.netlify.app/')
+
+**Tech used in this app**
+
+👉 [Tailwind CSS]('https://tailwindcss.com') for styling and dark mode
+👉 [Firebase]('https://firebase.google.com/')'s Real Time DataBase
+👉 `React.lazy()` with `Suspense` for optimization
+👉 `Axios` for http data handling
+👉 [Netlify]('https://www.netlify.com/') for hosting
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
